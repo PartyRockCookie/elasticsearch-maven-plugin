@@ -38,7 +38,11 @@ public class ForkedInstance
     public void run()
     {
         FilesystemUtil.setScriptPermission(config, "elasticsearch");
-
+        try {
+            FilesystemUtil.setScriptPermission(config, "x-pack/x-pack-ml/platform/darwin-x86_64/bin/controller");
+        } catch (Exception e){
+            System.out.println("Got a problem \n\n\n\n");
+        }
         ProcessUtil.executeScript(config,
                 getStartScriptCommand(),
                 null,
