@@ -41,7 +41,7 @@ public class ForkedInstance
         try {
             FilesystemUtil.setScriptPermission(config, "x-pack/x-pack-ml/platform/darwin-x86_64/bin/controller");
         } catch (Exception e){
-            System.out.println("Got a problem \n\n\n\n");
+            System.out.println("Failed to set permissions on X-PACK. Looks like this is a <=6.2.3 version of ES");
         }
         ProcessUtil.executeScript(config,
                 getStartScriptCommand(),

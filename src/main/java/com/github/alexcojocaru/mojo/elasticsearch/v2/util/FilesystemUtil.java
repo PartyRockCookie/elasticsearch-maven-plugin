@@ -60,7 +60,7 @@ public final class FilesystemUtil
                     .addArgument(String.format("bin/%s", scriptName));
             ProcessUtil.executeScript(config, command);
         }catch (Exception e){
-            System.out.println("File does not exist in bin directory, most likely module");
+            System.out.println("File does not exist in bin directory, most likely x-pack module");
             CommandLine command = new CommandLine("chmod")
                     .addArgument("755")
                     .addArgument(String.format("modules/%s", scriptName));
